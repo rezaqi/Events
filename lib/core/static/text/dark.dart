@@ -1,0 +1,16 @@
+import 'package:evently/core/class/colors.dart';
+import 'package:flutter/material.dart';
+
+TextTheme textThemeDark = TextTheme(
+  titleLarge: TextStyle(
+      fontSize: 20, fontWeight: FontWeight.w700, color: AppColors.primaryColor),
+  bodyLarge: TextStyle(
+    color: AppColors.white,
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+  ),
+  titleMedium: TextStyle(
+      fontSize: 20, fontWeight: FontWeight.w500, color: AppColors.primaryColor),
+  titleSmall: TextStyle(
+      fontSize: 16, fontWeight: FontWeight.w500, color: AppColors.primaryColor),
+);

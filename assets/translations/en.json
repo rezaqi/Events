@@ -1,0 +1,51 @@
+{
+    "language_en" : "English",
+    "language_ar" : "Arabic",
+
+    "theme_title" : "Personalize Your Experience",
+    "theme_description" : "Choose your preferred theme and language to get started with a comfortable, tailored experience that suits your style.",
+    "theme_language" : "Language",
+    "theme_theme" : "Theme",
+    "theme_bottom" : "Let’s Start",
+    "onboarding1_title" : "Find Events That Inspire You",
+    "onboarding1_description" : "Dive into a world of events crafted to fit your unique interests. Whether you're into live music, art workshops, professional networking, or simply discovering new experiences, we have something for everyone. Our curated recommendations will help you explore, connect, and make the most of every opportunity around you.",
+    "onboarding2_title" : "Effortless Event Planning",
+    "onboarding2_description" : "Take the hassle out of organizing events with our all-in-one planning tools. From setting up invites and managing RSVPs to scheduling reminders and coordinating details, we’ve got you covered. Plan with ease and focus on what matters – creating an unforgettable experience for you and your guests.",
+    "onboarding3_title" : "Connect with Friends & Share Moments",
+    "onboarding3_description" : "Make every event memorable by sharing the experience with others. Our platform lets you invite friends, keep everyone in the loop, and celebrate moments together. Capture and share the excitement with your network, so you can relive the highlights and cherish the memories."   , 
+    "email" : "Email",
+     "pass" : "Password",
+     "r_pass" : "Re Password",
+     "name" : "Name",
+     "already_have_account" : "Already Have Account ? ",
+     "do_not_have_acc" :"Don’t Have Account ?",
+     "forget_pass" : "Forget Password?",
+     "login": "Log In",
+     "log_google": " Login With Google",
+
+     "sign_up": "Create Account",
+     "signup_register" : "Register",
+     "icon" : "en",
+      "forget_pass_page" : "Forget Password",
+      "reset_password" : "Reset Password",
+      "welcome_back" : "Welcome Back ✨",
+
+      "cairo_egypt" : "Cairo , Egypt",
+      "sir" : "Sir",
+      "en" : "En",
+      "all" : "All",
+      "sport":"Sport",
+      "birthday":"Birthday",
+      "gaming":"Gaming",
+      "eating":"Eating",
+      "exhibition":"Exhibition",
+      "meeting":"Meeting",
+      "holiday":"Holiday",
+      "book_club" :"Book Club",
+      "work_shop": "Work Shop"
+
+      
+      
+
+
+}
