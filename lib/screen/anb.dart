@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:evently/core/class/colors.dart';
 import 'package:evently/core/class/routs_name.dart';
 import 'package:evently/screen/favorite.dart';
@@ -42,9 +43,12 @@ class _ANBState extends State<ANB> {
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: i,
+          type: BottomNavigationBarType.fixed,
           showSelectedLabels: true,
           showUnselectedLabels: true,
           selectedFontSize: 12,
+          selectedItemColor: AppColors.white,
+          unselectedItemColor: AppColors.dark,
           unselectedFontSize: 12,
           onTap: (value) {
             print(i);
@@ -58,14 +62,14 @@ class _ANBState extends State<ANB> {
                 icon: Icon(
                   Icons.home,
                 ),
-                label: 'Home',
+                label: 'home'.tr(),
                 backgroundColor: AppColors.primaryColor),
             BottomNavigationBarItem(
                 icon: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 0),
                   child: Icon(Icons.favorite),
                 ),
-                label: 'Favorite',
+                label: 'fav'.tr(),
                 backgroundColor: AppColors.primaryColor),
             //BottomNavigationBarItem(icon: SizedBox(width: 40), label: ''),
             BottomNavigationBarItem(
@@ -73,11 +77,11 @@ class _ANBState extends State<ANB> {
                   padding: const EdgeInsets.symmetric(horizontal: 0),
                   child: Icon(Icons.location_on),
                 ),
-                label: 'Location',
+                label: 'map'.tr(),
                 backgroundColor: AppColors.primaryColor),
             BottomNavigationBarItem(
                 icon: Icon(Icons.person),
-                label: 'Profile',
+                label: 'profile'.tr(),
                 backgroundColor: AppColors.primaryColor),
           ],
           backgroundColor: AppColors.primaryColor,

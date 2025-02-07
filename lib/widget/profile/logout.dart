@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:evently/core/class/colors.dart';
 import 'package:evently/core/class/routs_name.dart';
 import 'package:evently/firebase/firebase.dart';
@@ -28,7 +29,7 @@ class LogOut extends StatelessWidget {
               color: AppColors.white,
             ),
             Text(
-              "Log Out",
+              "pro_log_out".tr(),
               style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                     color: AppColors.white,
                   ),

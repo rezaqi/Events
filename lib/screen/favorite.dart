@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:evently/data/model/event_model.dart';
 import 'package:evently/firebase/firebase.dart';
 import 'package:evently/widget/customs/text_form.dart';
@@ -42,7 +43,7 @@ class _FavoriteState extends State<Favorite> {
           child: Column(
             children: [
               CustomTextForm(
-                  title: "Search for Event",
+                  title: "fav_search_for_event".tr(),
                   c: _textEditingController,
                   icon: Icons.search),
               StreamBuilder<QuerySnapshot<EventModel>>(

@@ -67,7 +67,10 @@ class CustomEvent extends StatelessWidget {
                 children: [
                   Text(
                     " ${eventModel.title}",
-                    style: Theme.of(context).textTheme.bodyLarge,
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyLarge!
+                        .copyWith(color: AppColorsDark.primaryColor),
                   ),
                   InkWell(
                       onTap: () {

@@ -36,8 +36,10 @@ class _ProfileState extends State<Profile> {
                 ontap2: () {
                   context.setLocale(Locale('ar'));
                 },
-                title: "Language",
-                titleText: "English",
+                title: "pro_language".tr(),
+                titleText: context.locale == Locale("en")
+                    ? "language_en".tr()
+                    : "language_ar".tr(),
                 text1: "language_en".tr(),
                 text2: "language_ar".tr(),
               ),
@@ -48,10 +50,12 @@ class _ProfileState extends State<Profile> {
                 ontap2: () {
                   provider.changeThemeModeToLight();
                 },
-                title: "Theme",
-                titleText: "Light",
-                text1: "Dark",
-                text2: "Light",
+                title: "pro_theme".tr(),
+                titleText: provider.themeMode == ThemeMode.light
+                    ? "pro_light".tr()
+                    : "pro_dark".tr(),
+                text1: "pro_dark".tr(),
+                text2: "pro_light".tr(),
               ),
             ],
           ),

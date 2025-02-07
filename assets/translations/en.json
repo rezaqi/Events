@@ -42,10 +42,34 @@
       "meeting":"Meeting",
       "holiday":"Holiday",
       "book_club" :"Book Club",
-      "work_shop": "Work Shop"
+      "work_shop": "Work Shop",
+
+      "home":"Home",
+      "map" : "Map",
+      "fav" : "Favorite",
+      "profile" : "profile",
+      
+      "choose_a_picture" : "Choose a picture",
+
+      "create_event" :"Create Event",
+      "event_title" : "Title",
+      "event_description" : "Description",
+      "event_date" : "Date",
+      "event_time" : "Time",
+      "event_add" : "Add",
+
+
+      "pro_language" : "Language",
+      "pro_theme" : "Theme",
+      "pro_dark" : "Dark",
+      "pro_light" : "Light",
+      "pro_log_out": "Log Out",
+
+      "fav_search_for_event" : "Search for Event"
 
       
-      
+
+
 
 
 }

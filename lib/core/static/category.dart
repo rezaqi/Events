@@ -1,47 +1,64 @@
 import 'package:evently/core/class/images.dart';
-import 'package:evently/core/class/text_app.dart';
 import 'package:flutter/material.dart';
 
 List<Map<String, dynamic>> event = [
   {
-    "name": AppText.all,
+    "name_ar": "الكل",
+    "name": "All",
     "image": AppImages.compass,
     "icon": Icons.sports_basketball
   },
   {
-    "name": AppText.sport,
+    "name_ar": "الرياضة",
+    "name": "Sport",
     "image": AppImages.sport,
     "icon": Icons.sports_basketball
   },
-  {"name": AppText.birthday, "image": AppImages.birthday, "icon": Icons.cake},
   {
-    "name": AppText.gaming,
+    "name_ar": "عيد ميلاد",
+    "name": "Birthday",
+    "image": AppImages.birthday,
+    "icon": Icons.cake
+  },
+  {
+    "name_ar": "ألعاب",
+    "name": "Gaming",
     "image": AppImages.gaming,
     "icon": Icons.sports_esports_outlined
   },
   {
-    "name": AppText.eating,
+    "name_ar": "تناول الطعام",
+    "name": "Eating",
     "image": AppImages.eating,
     "icon": Icons.fastfood_rounded
   },
   {
-    "name": AppText.exhibition,
+    "name_ar": "معرض",
+    "name": "Exhibition",
     "image": AppImages.exhibition,
     "icon": Icons.art_track
   },
-  {"name": AppText.workShop, "image": AppImages.workShop, "icon": Icons.build},
   {
-    "name": AppText.meeting,
+    "name_ar": "ورشة عمل",
+    "name": "Work Shop",
+    "image": AppImages.workShop,
+    "icon": Icons.build
+  },
+  {
+    "name_ar": "اجتماع",
+    "name": "Meeting",
     "image": AppImages.meeting,
     "icon": Icons.meeting_room_outlined
   },
   {
-    "name": AppText.holiday,
+    "name_ar": "عطلة",
+    "name": "Holiday",
     "image": AppImages.holiday,
     "icon": Icons.holiday_village_outlined
   },
   {
-    "name": AppText.bookClub,
+    "name_ar": "نادي الكتاب",
+    "name": "Book Club",
     "image": AppImages.bookClub,
     "icon": Icons.book_outlined
   },

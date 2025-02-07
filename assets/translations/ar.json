@@ -41,7 +41,31 @@
         "meeting": "اجتماع",
         "holiday": "عطلة",
         "book_club": "نادي الكتاب",
-        "work_shop": "ورشة عمل"
-      
-      
+        "work_shop": "ورشة عمل",
+        
+        
+        "home": "الرئيسية",  
+        "map": "الخريطة",  
+        "fav": "المفضلة",  
+        "profile": "الملف الشخصي",
+
+          "choose_a_picture" : "اختر صورة",
+
+          "create_event": "إنشاء حدث",
+          "event_title": "العنوان",
+          "event_description": "الوصف",
+          "event_date": "التاريخ",
+          "event_time": "الوقت",
+          "event_add": "إضافة",
+
+
+          "pro_language": "اللغة",
+          "pro_theme": "السمة",
+          "pro_dark": "داكن",
+          "pro_light": "فاتح",
+          "pro_log_out": "تسجيل الخروج",
+
+          
+      "fav_search_for_event" : "ابحث عن الحدث"
+
 }

@@ -59,7 +59,7 @@ class _HomeAppBarState extends State<HomeAppBar> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    AppText.welcomeBack,
+                                    "welcome_back".tr(),
                                     style: Theme.of(context)
                                         .textTheme
                                         .bodyMedium!
@@ -123,7 +123,7 @@ class _HomeAppBarState extends State<HomeAppBar> {
                                 color: AppColors.white,
                               ),
                               Text(
-                                AppText.cairoEgypt,
+                                "cairo_egypt".tr(),
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodyMedium!
@@ -160,7 +160,10 @@ class _HomeAppBarState extends State<HomeAppBar> {
                                                     ? AppColors.background
                                                     : AppColors.primaryColor,
                                                 icon: event[index]["icon"],
-                                                title: event[index]["name"],
+                                                title: context.locale ==
+                                                        Locale("en")
+                                                    ? event[index]["name"]
+                                                    : event[index]["name_ar"],
                                                 i: res == index ? true : false,
                                               ),
                                             ),

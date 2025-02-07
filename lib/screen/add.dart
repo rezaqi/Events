@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:evently/core/class/colors.dart';
 import 'package:evently/core/static/category.dart';
 import 'package:evently/data/model/event_model.dart';
@@ -45,12 +46,17 @@ class _AddEventState extends State<AddEvent> {
 
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(
-          Icons.arrow_back,
-          color: AppColors.primaryColor,
+        leading: InkWell(
+          onTap: () {
+            Navigator.of(context).pop();
+          },
+          child: Icon(
+            Icons.arrow_back,
+            color: AppColors.primaryColor,
+          ),
         ),
         title: Text(
-          "Create Event",
+          "create_event".tr(),
           style: Theme.of(context).textTheme.titleLarge,
         ),
       ),
@@ -101,14 +107,16 @@ class _AddEventState extends State<AddEvent> {
                                       ? AppColors.background
                                       : AppColors.primaryColor,
                                   icon: event[index + 1]["icon"],
-                                  title: event[index + 1]["name"],
+                                  title: context.locale == Locale("en")
+                                      ? event[index + 1]["name"]
+                                      : event[index + 1]["name_ar"],
                                   i: i == index ? true : false,
                                 ),
                               ),
                             ))),
               ),
               Text(
-                "Title",
+                "event_title".tr(),
                 style: Theme.of(context)
                     .textTheme
                     .titleLarge!
@@ -116,11 +124,11 @@ class _AddEventState extends State<AddEvent> {
               ),
               CustomTextForm(
                   minLines: 1,
-                  title: "title",
+                  title: "event_title".tr(),
                   c: title,
                   icon: Icons.input_rounded),
               Text(
-                "Description",
+                "event_description".tr(),
                 style: Theme.of(context)
                     .textTheme
                     .titleLarge!
@@ -128,12 +136,12 @@ class _AddEventState extends State<AddEvent> {
               ),
               CustomTextForm(
                   minLines: 5,
-                  title: "Description",
+                  title: "event_description".tr(),
                   c: description,
                   icon: null),
               CustomAddTime(
                 icon: Icons.calendar_month_sharp,
-                title: "Event Date",
+                title: "event_date".tr(),
                 subtitle: provider.selectedDate.toString().substring(0, 10),
                 ontap: () async {
                   var selectedDate = await showDatePicker(
@@ -149,7 +157,7 @@ class _AddEventState extends State<AddEvent> {
               ),
               CustomAddTime(
                 icon: Icons.timer,
-                title: "Event Time",
+                title: "event_time".tr(),
                 subtitle: provider.selectedTimer.format(context),
                 ontap: () async {
                   var timer = await showTimePicker(
@@ -170,13 +178,15 @@ class _AddEventState extends State<AddEvent> {
                       description: description.text,
                       date: provider.selectedDate.microsecondsSinceEpoch,
                       timer: provider.selectedTimer.format(context),
-                      category: event[i + 1]['name'],
+                      category: context.locale == Locale("en")
+                          ? event[i + 1]['name']
+                          : event[i + 1]['name_ar'],
                       location: "",
                     ));
                     Navigator.pop(context);
                   },
                   widget: Text(
-                    "Add",
+                    "event_add".tr(),
                     style: Theme.of(context)
                         .textTheme
                         .bodyLarge!

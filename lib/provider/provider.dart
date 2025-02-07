@@ -93,9 +93,7 @@ class MyProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  changeLanguage(
-    BuildContext context,
-  ) {
+  changeLanguage(BuildContext context) {
     if (context.locale == Locale("en")) {
       context.setLocale(Locale("ar"));
     } else {
