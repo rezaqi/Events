@@ -43,7 +43,9 @@ class _HomeAppBarState extends State<HomeAppBar> {
               decoration: BoxDecoration(
                   borderRadius:
                       BorderRadius.vertical(bottom: Radius.circular(30)),
-                  color: AppColors.primaryColor),
+                  color: provider.themeMode == ThemeMode.light
+                      ? AppColors.primaryColor
+                      : AppColorsDark.background),
               child: SafeArea(
                 child: snapshot.connectionState == ConnectionState.waiting
                     ? CircularProgressIndicator()
@@ -109,7 +111,13 @@ class _HomeAppBarState extends State<HomeAppBar> {
                                       child: Text(AppText.en.tr(),
                                           style: Theme.of(context)
                                               .textTheme
-                                              .titleSmall),
+                                              .titleSmall!
+                                              .copyWith(
+                                                  color: provider.themeMode ==
+                                                          ThemeMode.light
+                                                      ? AppColors.primaryColor
+                                                      : AppColorsDark
+                                                          .background)),
                                     ),
                                   )
                                 ],
@@ -151,14 +159,27 @@ class _HomeAppBarState extends State<HomeAppBar> {
                                                 provider.changeIi();
                                               },
                                               child: CustomCategories(
-                                                borderColor:
-                                                    AppColors.background,
-                                                textColor: res == index
-                                                    ? AppColors.primaryColor
-                                                    : AppColors.background,
-                                                backgroundColor: res == index
+                                                borderColor: provider
+                                                            .themeMode ==
+                                                        ThemeMode.light
                                                     ? AppColors.background
                                                     : AppColors.primaryColor,
+                                                textColor: res == index
+                                                    ? provider.themeMode ==
+                                                            ThemeMode.light
+                                                        ? AppColors.primaryColor
+                                                        : AppColors.white
+                                                    : AppColors.background,
+                                                backgroundColor: res == index
+                                                    ? provider.themeMode ==
+                                                            ThemeMode.light
+                                                        ? AppColors.background
+                                                        : AppColors.primaryColor
+                                                    : provider.themeMode ==
+                                                            ThemeMode.light
+                                                        ? AppColors.primaryColor
+                                                        : AppColorsDark
+                                                            .background,
                                                 icon: event[index]["icon"],
                                                 title: context.locale ==
                                                         Locale("en")

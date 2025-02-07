@@ -21,6 +21,7 @@
      "do_not_have_acc" :"Don’t Have Account ?",
      "forget_pass" : "Forget Password?",
      "login": "Log In",
+     "or" : "Or",
      "log_google": " Login With Google",
 
      "sign_up": "Create Account",

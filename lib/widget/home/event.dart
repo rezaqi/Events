@@ -3,7 +3,9 @@ import 'package:evently/core/class/colors.dart';
 import 'package:evently/core/static/category.dart';
 import 'package:evently/data/model/event_model.dart';
 import 'package:evently/firebase/firebase.dart';
+import 'package:evently/provider/provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class CustomEvent extends StatelessWidget {
   final EventModel eventModel;
@@ -11,11 +13,19 @@ class CustomEvent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<MyProvider>(context);
     return Container(
+      padding: EdgeInsets.all(0.5),
       margin: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
       height: 230,
       width: double.infinity,
       decoration: BoxDecoration(
+        border: Border.all(
+          width: 2,
+          color: provider.themeMode == ThemeMode.light
+              ? AppColors.primaryColor
+              : AppColorsDark.background,
+        ),
         borderRadius: BorderRadius.circular(16),
         color: AppColors.primaryColor,
       ),
@@ -35,7 +45,9 @@ class CustomEvent extends StatelessWidget {
             height: 60,
             width: 50,
             decoration: BoxDecoration(
-                color: AppColors.background,
+                color: provider.themeMode == ThemeMode.light
+                    ? AppColors.background
+                    : AppColorsDark.background,
                 borderRadius: BorderRadius.circular(10)),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -60,17 +72,20 @@ class CustomEvent extends StatelessWidget {
               height: 40,
               // width: 250,
               decoration: BoxDecoration(
-                  color: AppColors.background,
+                  color: provider.themeMode == ThemeMode.light
+                      ? AppColors.background
+                      : AppColorsDark.background,
                   borderRadius: BorderRadius.circular(10)),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     " ${eventModel.title}",
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyLarge!
-                        .copyWith(color: AppColorsDark.primaryColor),
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                          color: provider.themeMode == ThemeMode.light
+                              ? AppColors.dark
+                              : AppColorsDark.icon,
+                        ),
                   ),
                   InkWell(
                       onTap: () {

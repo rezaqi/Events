@@ -1,3 +1,4 @@
+import 'package:evently/core/class/colors.dart';
 import 'package:flutter/material.dart';
 
 class Dot extends StatefulWidget {
@@ -17,7 +18,9 @@ class _DotState extends State<Dot> {
       width: widget.iDot == widget.iPage ? 21 : 8,
       height: 8,
       decoration: BoxDecoration(
-          color: widget.iDot == widget.iPage ? Colors.blue : Colors.black,
+          color: widget.iDot == widget.iPage
+              ? AppColors.primaryColor
+              : AppColors.white,
           borderRadius: BorderRadius.circular(36)),
     );
   }

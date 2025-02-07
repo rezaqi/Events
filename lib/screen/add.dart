@@ -99,13 +99,24 @@ class _AddEventState extends State<AddEvent> {
                                   setState(() {});
                                 },
                                 child: CustomCategories(
-                                  borderColor: AppColors.primaryColor,
+                                  borderColor:
+                                      provider.themeMode == ThemeMode.light
+                                          ? AppColors.background
+                                          : AppColors.primaryColor,
                                   textColor: i == index
-                                      ? AppColors.primaryColor
-                                      : AppColors.background,
+                                      ? provider.themeMode == ThemeMode.light
+                                          ? AppColors.primaryColor
+                                          : AppColorsDark.background
+                                      : provider.themeMode == ThemeMode.light
+                                          ? AppColors.background
+                                          : AppColors.primaryColor,
                                   backgroundColor: i == index
-                                      ? AppColors.background
-                                      : AppColors.primaryColor,
+                                      ? provider.themeMode == ThemeMode.light
+                                          ? AppColors.background
+                                          : AppColors.primaryColor
+                                      : provider.themeMode == ThemeMode.light
+                                          ? AppColors.primaryColor
+                                          : AppColorsDark.background,
                                   icon: event[index + 1]["icon"],
                                   title: context.locale == Locale("en")
                                       ? event[index + 1]["name"]
@@ -140,6 +151,9 @@ class _AddEventState extends State<AddEvent> {
                   c: description,
                   icon: null),
               CustomAddTime(
+                color: provider.themeMode == ThemeMode.light
+                    ? AppColors.dark
+                    : AppColors.white,
                 icon: Icons.calendar_month_sharp,
                 title: "event_date".tr(),
                 subtitle: provider.selectedDate.toString().substring(0, 10),
@@ -156,6 +170,9 @@ class _AddEventState extends State<AddEvent> {
                 },
               ),
               CustomAddTime(
+                color: provider.themeMode == ThemeMode.light
+                    ? AppColors.dark
+                    : AppColors.white,
                 icon: Icons.timer,
                 title: "event_time".tr(),
                 subtitle: provider.selectedTimer.format(context),

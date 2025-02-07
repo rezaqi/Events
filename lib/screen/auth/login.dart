@@ -128,7 +128,7 @@ class _LogInState extends State<LogIn> {
                             ),
                           ),
                           Text(
-                            "Or",
+                            "or".tr(),
                             style: TextStyle(color: AppColors.primaryColor),
                           ),
                           SizedBox(
