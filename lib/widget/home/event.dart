@@ -1,14 +1,17 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:evently/core/class/colors.dart';
+import 'package:evently/core/class/routs_name.dart';
 import 'package:evently/core/static/category.dart';
 import 'package:evently/data/model/event_model.dart';
 import 'package:evently/firebase/firebase.dart';
 import 'package:evently/provider/provider.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class CustomEvent extends StatelessWidget {
   final EventModel eventModel;
+
   const CustomEvent({super.key, required this.eventModel});
 
   @override
@@ -87,19 +90,37 @@ class CustomEvent extends StatelessWidget {
                               : AppColorsDark.icon,
                         ),
                   ),
-                  InkWell(
-                      onTap: () {
-                        FirebaseManager.addFavEvent(EventModel(
-                            title: eventModel.title,
-                            image: eventModel.image,
-                            description: eventModel.description,
-                            date: eventModel.date,
-                            timer: eventModel.timer,
-                            category: eventModel.category,
-                            location: eventModel.location));
-                      },
-                      child:
-                          Icon(Icons.favorite, color: AppColors.primaryColor))
+                  Row(
+                    children: [
+                      InkWell(
+                          onTap: () {
+                            FirebaseManager.addFavEvent(EventModel(
+                                userId: FirebaseAuth.instance.currentUser!.uid,
+                                title: eventModel.title,
+                                image: eventModel.image,
+                                description: eventModel.description,
+                                date: eventModel.date,
+                                timer: eventModel.timer,
+                                category: eventModel.category,
+                                location: eventModel.location));
+                          },
+                          child: Icon(Icons.favorite,
+                              color: AppColors.primaryColor)),
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).pushNamed(AppRouts.editEvent,
+                              arguments: eventModel);
+                        },
+                        child: Icon(Icons.edit),
+                      ),
+                      InkWell(
+                        onTap: () {
+                          FirebaseManager.deleteEvent(eventModel.id);
+                        },
+                        child: Icon(Icons.delete),
+                      )
+                    ],
+                  )
                 ],
               ),
             ),

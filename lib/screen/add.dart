@@ -8,6 +8,7 @@ import 'package:evently/widget/add/custom_add_time.dart';
 import 'package:evently/widget/customs/button.dart';
 import 'package:evently/widget/customs/text_form.dart';
 import 'package:evently/widget/home/categories.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -189,6 +190,7 @@ class _AddEventState extends State<AddEvent> {
                   color: AppColors.primaryColor,
                   ontap: () {
                     FirebaseManager.addEvent(EventModel(
+                      userId: FirebaseAuth.instance.currentUser!.uid,
                       image: i + 1,
                       id: provider.userId.toString(),
                       title: title.text,

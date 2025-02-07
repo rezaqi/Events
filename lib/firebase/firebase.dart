@@ -176,6 +176,7 @@ class FirebaseManager {
     try {
       CollectionReference<Object?> collectionReference = getEventCollection();
       var eventRuf = collectionReference.doc();
+      eventModel.id = eventRuf.id;
       eventRuf.set(eventModel);
     } catch (e) {
       print(e);
@@ -187,12 +188,12 @@ class FirebaseManager {
       var collectionReference = getEventCollection();
       if (selectedCategory == "All") {
         return collectionReference
-            .where("id", isEqualTo: FirebaseAuth.instance.currentUser!.uid)
+            .where("userid", isEqualTo: FirebaseAuth.instance.currentUser!.uid)
             .orderBy("date", descending: false)
             .snapshots();
       } else {
         return collectionReference
-            .where("id", isEqualTo: FirebaseAuth.instance.currentUser!.uid)
+            .where("userid", isEqualTo: FirebaseAuth.instance.currentUser!.uid)
             .where("category", isEqualTo: selectedCategory)
             .orderBy("date", descending: false)
             .snapshots();
@@ -200,6 +201,32 @@ class FirebaseManager {
     } catch (e) {
       print("ERROR HERE ==== $e");
       return Stream.error(e);
+    }
+  }
+
+  static Future<void> updateEvent(EventModel eventModel) async {
+    try {
+      print(eventModel.id);
+      DocumentReference docRef =
+          FirebaseFirestore.instance.collection("events").doc(eventModel.id);
+
+      DocumentSnapshot doc = await docRef.get();
+
+      await docRef.update(eventModel.toJson());
+    } catch (e) {
+      print("------------------------: $e");
+    }
+  }
+
+  static Future<void>? deleteEvent(String eventId) {
+    try {
+      return FirebaseFirestore.instance
+          .collection("events")
+          .doc(eventId)
+          .delete();
+    } catch (e) {
+      print("----------------- $e");
+      return null;
     }
   }
 
@@ -244,6 +271,3 @@ class FirebaseManager {
     }
   }
 }
-//////////////////////////////////////////////
-///
-///

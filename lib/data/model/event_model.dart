@@ -1,5 +1,6 @@
 class EventModel {
   String id;
+  String userId;
   String title;
   String description;
   int date;
@@ -11,6 +12,7 @@ class EventModel {
   // Constructor
   EventModel({
     this.id = "",
+    required this.userId,
     required this.title,
     required this.image,
     required this.description,
@@ -23,6 +25,7 @@ class EventModel {
   factory EventModel.fromMap(Map<String, dynamic> map) {
     return EventModel(
       id: map['id'] ?? '',
+      userId: map['userid'] ?? '',
       image: map['image'] ?? '',
       title: map['title'] ?? '',
       description: map['description'] ?? '',
@@ -36,6 +39,7 @@ class EventModel {
   Map<String, dynamic> toJson() {
     return {
       'id': id,
+      'userid': userId,
       'image': image,
       'title': title,
       'description': description,
@@ -48,6 +52,6 @@ class EventModel {
 
   @override
   String toString() {
-    return 'EventModel(id: $id, title: $title, description: $description, date: $date, category: $category, timer: $timer , image: $image location: $location)';
+    return 'EventModel(id: $id, title: $title, description: $description, date: $date, category: $category, timer: $timer ,userid: $userId, image: $image location: $location)';
   }
 }
