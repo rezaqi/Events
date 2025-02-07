@@ -210,8 +210,6 @@ class FirebaseManager {
       DocumentReference docRef =
           FirebaseFirestore.instance.collection("events").doc(eventModel.id);
 
-      DocumentSnapshot doc = await docRef.get();
-
       await docRef.update(eventModel.toJson());
     } catch (e) {
       print("------------------------: $e");
